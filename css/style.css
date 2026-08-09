@@ -389,7 +389,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--white);
   transition: background 0.15s ease;
 }
-a.warning-strip:hover { background: var(--red-dark); }
+/* The strip is a <div> now (a 165-char anchor is bad for SEO/a11y); only the
+   trailing CTA inside it is a link. */
+.warning-strip a { font-weight: 700; }
+.warning-strip a:hover { opacity: 0.85; }
 .warning-strip .container {
   display: flex;
   align-items: center;
@@ -706,7 +709,14 @@ a.warning-strip:hover { background: var(--red-dark); }
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.footer-grid h4 { color: var(--white); font-size: 1rem; margin-bottom: 16px; }
+.footer-grid h4,
+.footer-grid .footer-heading {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  font-family: var(--font-head);
+  font-weight: 700;
+}
 .footer-grid ul { list-style: none; padding: 0; margin: 0; }
 .footer-grid li { margin-bottom: 10px; }
 .footer-grid a:hover { color: var(--white); }
