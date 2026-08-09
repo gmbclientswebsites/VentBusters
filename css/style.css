@@ -721,6 +721,8 @@ a.warning-strip:hover { background: var(--red-dark); }
   .main-nav { display: none; }
   .nav-toggle { display: block; }
   .header-phone { display: none; }
+  .header-actions .btn--red { display: none; }
+  .site-header .container { flex-wrap: nowrap; }
   .signs-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr 1fr; }

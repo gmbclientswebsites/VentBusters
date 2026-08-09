@@ -4,36 +4,38 @@
 
 ## Company Facts
 - Name: Vent Busters
-- Services: Air duct cleaning, dryer vent cleaning, dryer vent airflow & safety checks
+- Services: Dryer vent cleaning and dryer vent airflow & safety checks (live now); air duct cleaning (coming soon)
 - Based in: Boynton Beach, FL (2414 Venetian Way, Boynton Beach, FL 33426)
-- Service area: Boca Raton, Delray Beach, Boynton Beach, Lake Worth Beach, Greenacres, Wellington, Royal Palm Beach, West Palm Beach, Palm Beach, Riviera Beach, Lake Park, North Palm Beach, Palm Beach Gardens, Juno Beach, Jupiter, Tequesta, Hobe Sound, Stuart, Palm City, Port St. Lucie
+- Service area: Palm Beach County & the Treasure Coast, from Boca Raton to Port St. Lucie — Boca Raton, Delray Beach, Boynton Beach, Lake Worth Beach, Greenacres, Wellington, Royal Palm Beach, West Palm Beach, Palm Beach, Riviera Beach, Lake Park, North Palm Beach, Palm Beach Gardens, Juno Beach, Jupiter, Tequesta, Hobe Sound, Stuart, Palm City, Port St. Lucie
 - Phone: (561) 448-4648
 - Email: Ventbusters@gmail.com
 - Hours: Monday–Friday 7am–6pm, Saturday 8am–2pm
-- Pricing: No fixed rate published — every home is quoted individually after a free, no-obligation on-site inspection
-- Credentials: Insured, trained, background-checked technicians following a documented cleaning and safety process
-- Guarantee: Satisfaction guarantee
+- Pricing: No fixed rate published — every home is quoted individually after a free, no-obligation on-site visit
+- Credentials: Insured, trained technicians following a documented cleaning and safety process
+- Guarantee: Satisfaction guarantee (see terms of service for details)
 
 ## Common Questions
-- How much does air duct cleaning cost? Pricing depends on system size and buildup — there's no published flat rate; a free on-site inspection gives an exact, no-obligation quote.
+- How much does dryer vent cleaning cost? Pricing depends on vent length, routing, and buildup — there's no published flat rate; a free on-site visit gives an exact, no-obligation quote.
+- Is air duct cleaning available? Not yet — it's coming soon. Dryer vent cleaning and airflow & safety checks are live now.
 - How often should a dryer vent be cleaned? At least once a year; every 6–9 months for heavy-use households.
-- How long does service take? Dryer vent cleaning: 30–45 minutes. Full duct cleaning: 2–4 hours.
+- How long does service take? Dryer vent cleaning: 30–45 minutes.
 - Warning signs of a clogged vent: slow-drying clothes, burning smell when drying, dusty vent covers, musty HVAC odor, rising energy bills.
 - Same-day service? Yes, same-day and next-day appointments are available for urgent fire-risk situations, most often near Boynton Beach.
 - Is duct cleaning a scam? The industry has a mixed reputation due to lowball bait-and-switch ads. Legitimate service includes a free upfront inspection, photo documentation, and no pressure to decide on the spot.
-- What areas does Vent Busters serve? The Palm Beach County / Treasure Coast corridor from Boca Raton to Port St. Lucie — see the service areas page for the full, current list of 20 cities.
+- What areas does Vent Busters serve? Palm Beach County and the Treasure Coast, from Boca Raton to Port St. Lucie — see the service areas page for the full, current list of 20 cities.
 
 ## Pages
 - [Home](https://www.ventbusters.com/): Company overview, services summary, free-inspection lead form, FAQ.
 - [Services](https://www.ventbusters.com/services.html): Overview of all services with links to each dedicated service page.
-- [Air Duct Cleaning](https://www.ventbusters.com/air-duct-cleaning.html): Details, inclusions, and FAQ for air duct cleaning.
+- [Air Duct Cleaning (Coming Soon)](https://www.ventbusters.com/air-duct-cleaning.html): Not yet available — details on the planned service and a waitlist signup.
 - [Dryer Vent Cleaning](https://www.ventbusters.com/dryer-vent-cleaning.html): Details, inclusions, and FAQ for dryer vent cleaning.
-- [Fire-Safety Inspections](https://www.ventbusters.com/fire-safety-inspections.html): Details on the free fire-safety vent inspection.
+- [Dryer Vent Airflow & Safety Check](https://www.ventbusters.com/fire-safety-inspections.html): Details on the free dryer vent airflow & safety check (not a certified fire inspection).
 - [About](https://www.ventbusters.com/about.html): Company story, values, credentials, and guarantee.
 - [Service Areas](https://www.ventbusters.com/service-areas.html): All 20 cities served, with links to each city's dedicated page.
 - [Blog](https://www.ventbusters.com/blog.html): Fire-safety tips, air-quality guides, and buyer's-guide content.
 - [Contact](https://www.ventbusters.com/contact.html): Contact form, phone, email, address, and business hours.
 - [Privacy Policy](https://www.ventbusters.com/privacy-policy.html): How Vent Busters collects and uses customer information.
+- [Terms of Service](https://www.ventbusters.com/terms.html): Service limitations, cancellation policy, warranty/guarantee terms, and SMS consent terms.
 
 ## Blog Posts
 - [5 Warning Signs Your Dryer Vent Needs Cleaning](https://www.ventbusters.com/blog/warning-signs-dryer-vent-needs-cleaning.html)
