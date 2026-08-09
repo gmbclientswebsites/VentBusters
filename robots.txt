@@ -33,5 +33,5 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://www.ventbusters.com/sitemap.xml
+Sitemap: https://www.vent-busters.com/sitemap.xml
 
