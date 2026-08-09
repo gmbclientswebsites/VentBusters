@@ -36,6 +36,29 @@ body {
 
 img { max-width: 100%; display: block; }
 
+/* ---- Overflow safety net --------------------------------------------------
+   Grid/flex children default to min-width:auto, so they refuse to shrink below
+   their min-content width. Combined with nowrap buttons and wide <select>
+   options this pushed content past its container on small screens (and
+   .lead-magnet's overflow:hidden then clipped the text). These rules let
+   layout children shrink, and keep form controls inside their box. */
+.lead-magnet__copy,
+.lead-magnet__form,
+.content-split > *,
+.contact-wrap > *,
+.area-wrap > *,
+.hero__copy,
+.hero__media,
+.footer-grid > *,
+.service-hub-card__body,
+.service-card__body,
+.blog-card__body { min-width: 0; }
+
+input, select, textarea { max-width: 100%; }
+
+/* Long unbroken strings (URLs, emails) shouldn't force horizontal scroll. */
+body { overflow-wrap: break-word; }
+
 h1, h2, h3, h4 {
   font-family: var(--font-head);
   line-height: 1.2;
@@ -119,7 +142,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy);
 }
 .btn--outline-navy:hover { background: rgba(16,35,63,0.06); }
-.btn--block { width: 100%; }
+/* Full-width buttons must wrap: .btn sets white-space:nowrap, which would otherwise
+   make a long label the flex/grid container's min-content width and cause overflow. */
+.btn--block { width: 100%; white-space: normal; }
 .btn--lg { padding: 18px 36px; font-size: 1.1rem; }
 
 /* Skip link */
@@ -697,11 +722,13 @@ a.warning-strip:hover { background: var(--red-dark); }
   bottom: 0; left: 0; right: 0;
   z-index: 600;
   background: var(--navy-dark);
-  padding: 12px 16px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
   gap: 10px;
   box-shadow: 0 -6px 20px rgba(0,0,0,0.2);
 }
-.mobile-cta a { flex: 1; }
+/* min-width:0 lets these shrink below the nowrap label width; the reduced
+   horizontal padding keeps both labels fitting down to a 320px viewport. */
+.mobile-cta a { flex: 1 1 0; min-width: 0; padding-left: 14px; padding-right: 14px; }
 
 /* Utility */
 .visually-hidden {
@@ -724,12 +751,20 @@ a.warning-strip:hover { background: var(--red-dark); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 760px) {
+/* The full desktop header (brand + 5-item nav + phone block + CTA button) needs
+   roughly 900px. Below that it overflowed the viewport — notably at 768px (iPad
+   portrait), where the page gained ~34px of horizontal scroll. Collapse to the
+   hamburger here, above the general 760px layout breakpoint. The mobile nav is
+   toggled via the `hidden` attribute in js/script.js, so it works at any width. */
+@media (max-width: 900px) {
   .main-nav { display: none; }
   .nav-toggle { display: block; }
   .header-phone { display: none; }
   .header-actions .btn--red { display: none; }
   .site-header .container { flex-wrap: nowrap; }
+}
+
+@media (max-width: 760px) {
   .signs-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr 1fr; }
@@ -740,10 +775,18 @@ a.warning-strip:hover { background: var(--red-dark); }
   .lead-magnet__copy, .lead-magnet__form { padding: 32px 24px; }
   .footer-grid { grid-template-columns: 1fr; }
   .mobile-cta { display: flex; }
-  body { padding-bottom: 66px; }
+  /* Must clear the fixed .mobile-cta bar (~84px) plus the iPhone home-indicator
+     inset, or the last of the footer sits behind it. */
+  body { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
   .section { padding: 56px 0; }
   .hero__proof { gap: 20px; }
   .topbar__right { display: none; }
+  /* .btn is nowrap by default, so long labels ("Get My Free Boynton Beach Quote",
+     "Air Duct Cleaning in West Palm Beach") rendered wider than a phone viewport and
+     pushed the page into horizontal scroll. Let them wrap on small screens. */
+  .btn { white-space: normal; }
+  .btn--lg { padding: 16px 24px; font-size: 1rem; }
+  .stats-row div, .hero__proof div { min-width: 0; }
 }
 
 @media (max-width: 460px) {
@@ -1083,6 +1126,20 @@ a.warning-strip:hover { background: var(--red-dark); }
   .region-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
   .included-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Narrow-phone overrides (must stay LAST so they win over the
+   max-width:760px rules above, which also match at these widths) ---- */
+@media (max-width: 460px) {
+  /* Large stat headings ("Documented" / "Before-and-After Photos") overflow a
+     two-across grid at 320px. */
+  .stats-row { grid-template-columns: 1fr; }
+  .stats-row strong { font-size: 1.7rem; }
+  .hero__tagline { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+  .hero__proof { gap: 16px; }
+  /* Header on the minimal thank-you / 404 layouts: brand + button must share 320px. */
+  .site-header .container { gap: 10px; }
+  .site-header .btn { padding: 12px 16px; font-size: 0.9rem; }
 }
 
 /* Reduced motion */
