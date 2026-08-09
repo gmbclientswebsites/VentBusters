@@ -4,6 +4,31 @@
       "source": "/blog/vent-busters-expanding-nationwide.html",
       "destination": "/blog/south-florida-home-fire-safety-checklist.html",
       "permanent": true
+    },
+    {
+      "source": "/air-duct-cleaning.html",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/air-duct-cleaning-boca-raton-fl.html",
+      "destination": "/locations/boca-raton-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/air-duct-cleaning-west-palm-beach-fl.html",
+      "destination": "/locations/west-palm-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/dryer-vent-cleaning-boca-raton-fl.html",
+      "destination": "/locations/boca-raton-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/dryer-vent-cleaning-west-palm-beach-fl.html",
+      "destination": "/locations/west-palm-beach-fl.html",
+      "permanent": true
     }
   ]
 }
