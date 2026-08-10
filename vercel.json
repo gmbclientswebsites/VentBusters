@@ -29,6 +29,16 @@
       "source": "/locations/dryer-vent-cleaning-west-palm-beach-fl.html",
       "destination": "/locations/west-palm-beach-fl.html",
       "permanent": true
+    },
+    {
+      "source": "/locations/lake-park-fl.html",
+      "destination": "/locations/north-palm-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/palm-beach-fl.html",
+      "destination": "/locations/west-palm-beach-fl.html",
+      "permanent": true
     }
   ]
 }

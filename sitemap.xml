@@ -1,189 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.vent-busters.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/services.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/dryer-vent-cleaning.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/fire-safety-inspections.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.vent-busters.com/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.vent-busters.com/service-areas.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.vent-busters.com/air-duct-cleaning.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/blog.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.vent-busters.com/blog/warning-signs-dryer-vent-needs-cleaning.html</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.vent-busters.com/blog/florida-humidity-duct-cleaning.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/blog/how-often-clean-air-ducts.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/blog/florida-humidity-duct-cleaning.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/blog/south-florida-home-fire-safety-checklist.html</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/blog/what-affects-duct-cleaning-cost.html</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/blog/is-duct-cleaning-a-scam.html</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.vent-busters.com/blog/south-florida-home-fire-safety-checklist.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/blog/warning-signs-dryer-vent-needs-cleaning.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/blog/what-affects-duct-cleaning-cost.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/contact.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/dryer-vent-blockage-removal.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/dryer-vent-cleaning.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/fire-safety-inspections.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/hvac-system-sanitization.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/boca-raton-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.vent-busters.com/locations/boynton-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/locations/delray-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/boca-raton-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/lake-worth-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/locations/greenacres-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.vent-busters.com/locations/wellington-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/royal-palm-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/west-palm-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/palm-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/riviera-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/lake-park-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/north-palm-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/palm-beach-gardens-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/juno-beach-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/jupiter-fl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vent-busters.com/locations/tequesta-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.vent-busters.com/locations/highland-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/locations/hobe-sound-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.vent-busters.com/locations/stuart-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.vent-busters.com/locations/juno-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/jupiter-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/lake-worth-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/lantana-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/north-palm-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/palm-beach-gardens-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/locations/palm-city-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/locations/port-st-lucie-fl.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/riviera-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/royal-palm-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/stuart-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/tequesta-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/wellington-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/locations/west-palm-beach-fl.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vent-busters.com/privacy-policy.html</loc>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.vent-busters.com/service-areas.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/services.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.vent-busters.com/terms.html</loc>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vent-busters.com/uv-light-installation.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.9</priority>
   </url>
 </urlset>
