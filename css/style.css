@@ -235,6 +235,44 @@ a { color: inherit; text-decoration: none; }
 }
 .main-nav a:hover { border-color: var(--red); }
 
+/* Services dropdown */
+.main-nav .has-dropdown { position: relative; }
+.main-nav .caret { font-size: 0.7em; opacity: 0.7; }
+.main-nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: -14px;
+  min-width: 250px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(10,23,41,0.16);
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  z-index: 600;
+}
+.main-nav .has-dropdown:hover > .dropdown,
+.main-nav .has-dropdown:focus-within > .dropdown { display: flex; }
+.main-nav .dropdown li { display: block; }
+.main-nav .dropdown a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.main-nav .dropdown a:hover { background: var(--off-white); color: var(--red); }
+
+/* Mobile: indent the nested service links */
+.mobile-nav__sub a { padding-left: 22px; font-size: 0.92rem; color: var(--gray-500); }
+.mobile-nav__sub a { border-left: 3px solid #eef1f5; }
+
+/* Footer service-area column */
+.footer-areas { columns: 2; column-gap: 18px; }
+.footer-allareas { display: inline-block; margin-top: 10px; font-weight: 700; color: #ff8a8a; font-size: 0.9rem; }
+.footer-allareas:hover { text-decoration: underline; }
+
 .header-actions { display: flex; align-items: center; gap: 18px; }
 .header-phone {
   display: flex;
@@ -772,6 +810,7 @@ a { color: inherit; text-decoration: none; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .area-wrap { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-areas { columns: 2; }
 }
 
 /* The full desktop header (brand + 5-item nav + phone block + CTA button) needs

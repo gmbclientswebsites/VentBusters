@@ -63,8 +63,8 @@
       successEl.classList.remove("show");
       errorEl.innerHTML =
         "⚠️ " + msg +
-        ' Please call <a href="tel:+15614484648"><strong>(561) 448-4648</strong></a>' +
-        ' or email <a href="mailto:Ventbusters@gmail.com">Ventbusters@gmail.com</a>.';
+        ' Please call <a href="tel:+15618844648"><strong>(561) 884-4648</strong></a>' +
+        ' or email <a href="mailto:Ventsbusters@gmail.com">Ventsbusters@gmail.com</a>.';
       errorEl.hidden = false;
       errorEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }

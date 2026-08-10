@@ -47,10 +47,10 @@
 
 <div class="topbar">
   <div class="container">
-    <div class="topbar__item"><span aria-hidden="true">🛡️</span>&nbsp; Insured &middot; Trained &middot; Locally Operated</div>
+    <div class="topbar__item"><span aria-hidden="true">📍</span>&nbsp; Serving Boca Raton to Port St. Lucie</div>
     <div class="topbar__right">
-      <a href="mailto:Ventbusters@gmail.com">Ventbusters@gmail.com</a>
-      <a href="/service-areas.html">Serving Boca Raton to Port St. Lucie</a>
+      <a href="mailto:Ventsbusters@gmail.com">Ventsbusters@gmail.com</a>
+      <a href="tel:+15618844648"><strong>Call (561) 884-4648</strong></a>
     </div>
   </div>
 </div>
@@ -70,17 +70,26 @@
     </a>
     <nav class="main-nav" aria-label="Primary">
       <ul>
-        <li><a href="/services.html">Services</a></li>
+        <li class="has-dropdown">
+          <a href="/services.html">Services <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown">
+            <li><a href="/dryer-vent-cleaning.html">Dryer Vent Cleaning</a></li>
+            <li><a href="/dryer-vent-blockage-removal.html">Dryer Vent Blockage Removal</a></li>
+            <li><a href="/air-duct-cleaning.html">Air Duct Cleaning</a></li>
+            <li><a href="/uv-light-installation.html">UV Light Systems</a></li>
+            <li><a href="/hvac-system-sanitization.html">System Sanitization</a></li>
+          </ul>
+        </li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/service-areas.html">Service Areas</a></li>
         <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/contact.html" aria-current="page">Contact</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">
       <div class="header-phone">
         <small>Call for a free quote</small>
-        <strong><a href="tel:+15614484648">(561) 448-4648</a></strong>
+        <strong><a href="tel:+15618844648">(561) 884-4648</a></strong>
       </div>
       <a href="#contact-form" class="btn btn--red">Get Free Quote</a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
@@ -91,11 +100,16 @@
   <nav id="mobileNav" class="mobile-nav" aria-label="Mobile" hidden>
     <ul>
       <li><a href="/services.html">Services</a></li>
+      <li class="mobile-nav__sub"><a href="/dryer-vent-cleaning.html">Dryer Vent Cleaning</a></li>
+      <li class="mobile-nav__sub"><a href="/dryer-vent-blockage-removal.html">Dryer Vent Blockage Removal</a></li>
+      <li class="mobile-nav__sub"><a href="/air-duct-cleaning.html">Air Duct Cleaning</a></li>
+      <li class="mobile-nav__sub"><a href="/uv-light-installation.html">UV Light Systems</a></li>
+      <li class="mobile-nav__sub"><a href="/hvac-system-sanitization.html">System Sanitization</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/service-areas.html">Service Areas</a></li>
       <li><a href="/blog.html">Blog</a></li>
       <li><a href="/contact.html">Contact</a></li>
-      <li><a href="tel:+15614484648">Call (561) 448-4648</a></li>
+      <li><a href="tel:+15618844648">Call (561) 884-4648</a></li>
     </ul>
   </nav>
 </header>
@@ -118,11 +132,11 @@
         <ul class="contact-info-list">
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.8"/></svg>
-            <div><strong>Phone</strong><a href="tel:+15614484648">(561) 448-4648</a></div>
+            <div><strong>Phone</strong><a href="tel:+15618844648">(561) 884-4648</a></div>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4V4Z" stroke="currentColor" stroke-width="1.8"/><path d="m4 6 8 7 8-7" stroke="currentColor" stroke-width="1.8"/></svg>
-            <div><strong>Email</strong><a href="mailto:Ventbusters@gmail.com">Ventbusters@gmail.com</a></div>
+            <div><strong>Email</strong><a href="mailto:Ventsbusters@gmail.com">Ventsbusters@gmail.com</a></div>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>
@@ -149,7 +163,7 @@
         -->
         <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
           <div class="form-row form-honeypot" aria-hidden="true">
-            <label for="companyC">Company</label>
+            <label for="companyC">Website</label>
             <input type="text" id="companyC" name="company" tabindex="-1" autocomplete="off">
           </div>
 
@@ -166,7 +180,7 @@
 
           <div class="form-row">
             <label for="cPhone">Phone Number</label>
-            <input type="tel" id="cPhone" name="phone" required autocomplete="tel" placeholder="(561) 448-4648">
+            <input type="tel" id="cPhone" name="phone" required autocomplete="tel" placeholder="(561) 884-4648">
           </div>
 
           <div class="form-row">
@@ -180,12 +194,20 @@
           </div>
 
           <div class="form-row">
+            <label for="cZip">ZIP Code</label>
+            <input type="text" id="cZip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required autocomplete="postal-code" placeholder="33426">
+          </div>
+
+          <div class="form-row">
             <label for="cService">Service Needed</label>
             <select id="cService" name="service" required>
               <option value="">Select a service…</option>
-              <option value="dryer-vent">Dryer Vent Cleaning</option>
-              <option value="not-sure">Not sure — help me choose</option>
-              <option value="inspection">Dryer Vent Airflow &amp; Safety Check Only</option>
+              <option value="dryer-vent-cleaning">Dryer Vent Cleaning</option>
+              <option value="blockage-removal">Dryer Vent Blockage Removal</option>
+              <option value="air-duct-cleaning">Air Duct Cleaning</option>
+              <option value="uv-light">UV Light Installation</option>
+              <option value="sanitization">HVAC System Sanitization</option>
+              <option value="not-sure">Not Sure / Need an Evaluation</option>
             </select>
           </div>
 
@@ -196,7 +218,7 @@
 
           <button type="submit" class="btn btn--red btn--block btn--lg">Send My Request</button>
           <p class="form-disclaimer">By submitting this form, you agree that Vent Busters may call, email, or text you regarding your service request. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out of text messages. See our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
-          <div class="form-success" role="status" id="formSuccess">✅ Thanks! We received your request and will contact you during business hours to discuss your quote.</div>
+          <div class="form-success" role="status" id="formSuccess">✅ Thanks! We received your request and will contact you during business hours to discuss your service needs and quote.</div>
         </form>
       </div>
     </div>
@@ -219,13 +241,16 @@
           </span>
           Vent Busters
         </a>
-        <p>When lint fights back, Vent Busters clears the way. Insured, trained dryer vent cleaning for safer homes.</p>
+        <p>When airflow fights back, Vent Busters clears the way. Professional dryer vent and air duct services from Boca Raton to Port St. Lucie.</p>
       </div>
       <div>
         <p class="footer-heading">Services</p>
         <ul>
           <li><a href="/dryer-vent-cleaning.html">Dryer Vent Cleaning</a></li>
-          <li><a href="/fire-safety-inspections.html">Dryer Vent Safety Check</a></li>
+          <li><a href="/dryer-vent-blockage-removal.html">Dryer Vent Blockage Removal</a></li>
+          <li><a href="/air-duct-cleaning.html">Air Duct Cleaning</a></li>
+          <li><a href="/uv-light-installation.html">UV Light Systems</a></li>
+          <li><a href="/hvac-system-sanitization.html">System Sanitization</a></li>
           <li><a href="/services.html">All Services</a></li>
         </ul>
       </div>
@@ -239,11 +264,25 @@
         </ul>
       </div>
       <div>
+        <p class="footer-heading">Service Areas</p>
+        <ul class="footer-areas">
+          <li><a href="/locations/boca-raton-fl.html">Boca Raton</a></li>
+          <li><a href="/locations/delray-beach-fl.html">Delray Beach</a></li>
+          <li><a href="/locations/boynton-beach-fl.html">Boynton Beach</a></li>
+          <li><a href="/locations/west-palm-beach-fl.html">West Palm Beach</a></li>
+          <li><a href="/locations/palm-beach-gardens-fl.html">Palm Beach Gardens</a></li>
+          <li><a href="/locations/jupiter-fl.html">Jupiter</a></li>
+          <li><a href="/locations/stuart-fl.html">Stuart</a></li>
+          <li><a href="/locations/port-st-lucie-fl.html">Port St. Lucie</a></li>
+        </ul>
+        <a href="/service-areas.html" class="footer-allareas">View All 20 Service Areas →</a>
+      </div>
+      <div>
         <p class="footer-heading">Contact</p>
         <ul>
-          <li><a href="tel:+15614484648">(561) 448-4648</a></li>
-          <li><a href="mailto:Ventbusters@gmail.com">Ventbusters@gmail.com</a></li>
-          <li>2414 Venetian Way, Boynton Beach, FL 33426</li>
+          <li><a href="tel:+15618844648">(561) 884-4648</a></li>
+          <li><a href="mailto:Ventsbusters@gmail.com">Ventsbusters@gmail.com</a></li>
+          <li>Palm Beach County &amp; the Treasure Coast</li>
           <li>Mon–Thu 7am–6pm, Fri 7am–3pm</li>
         </ul>
       </div>
@@ -256,7 +295,7 @@
 </footer>
 
 <div class="mobile-cta">
-  <a href="tel:+15614484648" class="btn btn--outline" style="border-color:#fff;color:#fff;">📞 Call Now</a>
+  <a href="tel:+15618844648" class="btn btn--outline" style="border-color:#fff;color:#fff;">📞 Call Now</a>
   <a href="#contact-form" class="btn btn--red">Free Quote</a>
 </div>
 
