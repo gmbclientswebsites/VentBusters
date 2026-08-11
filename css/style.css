@@ -207,17 +207,13 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.25rem;
   color: var(--navy);
 }
-.brand__badge {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(160deg, var(--navy), var(--navy-dark));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
+.brand__logo {
+  height: 52px;
+  width: auto;
   flex-shrink: 0;
 }
+.brand__text { white-space: nowrap; }
+.site-footer .brand__logo { height: 88px; }
 .brand span { color: var(--red); }
 
 .main-nav ul {
@@ -847,6 +843,8 @@ a { color: inherit; text-decoration: none; }
      "Air Duct Cleaning in West Palm Beach") rendered wider than a phone viewport and
      pushed the page into horizontal scroll. Let them wrap on small screens. */
   .btn { white-space: normal; }
+  .brand__logo { height: 42px; }
+  .brand { gap: 8px; font-size: 1.1rem; }
   .btn--lg { padding: 16px 24px; font-size: 1rem; }
   .stats-row div, .hero__proof div { min-width: 0; }
 }
