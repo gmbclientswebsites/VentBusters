@@ -1,5 +1,6 @@
 {
   "buildCommand": "node scripts/build-blog.js",
+  "outputDirectory": ".",
   "redirects": [
     {
       "source": "/blog/vent-busters-expanding-nationwide.html",
