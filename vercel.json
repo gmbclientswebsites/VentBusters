@@ -8,11 +8,6 @@
       "permanent": true
     },
     {
-      "source": "/air-duct-cleaning.html",
-      "destination": "/services.html",
-      "permanent": true
-    },
-    {
       "source": "/locations/air-duct-cleaning-boca-raton-fl.html",
       "destination": "/locations/boca-raton-fl.html",
       "permanent": true
