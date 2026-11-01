@@ -1,5 +1,5 @@
 /* ============================================================
-   Vent Busters — Air Duct & Dryer Vent Cleaning
+   Vent Busters — Dryer Vent Cleaning Specialists
    Stylesheet
    ============================================================ */
 
@@ -295,9 +295,19 @@ a { color: inherit; text-decoration: none; }
   border-radius: 2px;
 }
 
+/* 12 items is taller than a 667px phone. Cap the open menu to the space below
+   the header and let it scroll itself, rather than running off the page. dvh
+   where supported, because mobile 100vh ignores the browser chrome. */
 .mobile-nav {
   border-top: 1px solid var(--gray-100);
   background: var(--white);
+  max-height: calc(100vh - 112px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+@supports (height: 100dvh) {
+  .mobile-nav { max-height: calc(100dvh - 112px); }
 }
 .mobile-nav ul {
   list-style: none;
@@ -345,6 +355,18 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.85rem;
   font-weight: 600;
 }
+/* The rating badge links to the Google listing so the claim is checkable. */
+.hero__badge--link {
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.hero__badge--link:hover,
+.hero__badge--link:focus-visible {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.4);
+}
+
 .hero h1 {
   color: var(--white);
   font-size: clamp(1.6rem, 3vw, 2.3rem);
@@ -694,8 +716,13 @@ a { color: inherit; text-decoration: none; }
 }
 .testimonial-card .stars { color: #f5a623; margin-bottom: 12px; letter-spacing: 2px; }
 .testimonial-card p { color: var(--gray-700); font-style: italic; }
-.testimonial-card__name { font-weight: 700; color: var(--navy); }
-.testimonial-card__loc { font-size: 0.8rem; color: var(--gray-500); }
+.testimonial-card p { margin-bottom: 14px; }
+/* The quote is italic; the attribution under it should not be. */
+/* Qualified with the element: a bare .testimonial-card__name (0,1,0) loses to
+   .testimonial-card p (0,1,1) whatever the source order, so these kept
+   inheriting the quote italic. */
+.testimonial-card p.testimonial-card__name { font-weight: 700; color: var(--navy); font-style: normal; margin-bottom: 2px; }
+.testimonial-card p.testimonial-card__loc { font-size: 0.8rem; color: var(--gray-500); font-style: normal; margin-bottom: 0; }
 
 /* Quick facts (AI/answer-engine friendly summary block) */
 .quick-facts {
@@ -870,15 +897,12 @@ a { color: inherit; text-decoration: none; }
   .footer-areas { columns: 2; }
 }
 
-/* The full desktop header (brand + 5-item nav + phone block + CTA button) needs
-   roughly 900px. Below that it overflowed the viewport — notably at 768px (iPad
-   portrait), where the page gained ~34px of horizontal scroll. Collapse to the
-   hamburger here, above the general 760px layout breakpoint. The mobile nav is
-   toggled via the `hidden` attribute in js/script.js, so it works at any width. */
-/* Nav labels carry the keyword ("Dryer Vent Cleaning"), so the desktop bar is
-   wide. Collapse at 940px: at 901px the widest fallback font (Arial, on
-   machines without Segoe UI) leaves only 12px of slack. */
-@media (max-width: 940px) {
+/* Nav labels carry the keyword ("Dryer Vent Cleaning") and the bar now also
+   holds Reviews, so the desktop header is wide. Collapse at 1010px: measured
+   in the widest realistic fallback font (Arial, on machines without Segoe
+   UI), 941px overflows by 41px and even 980px is 2px short. 1010px leaves
+   28px of slack in that worst case. Re-measure if a nav item is added. */
+@media (max-width: 1010px) {
   .main-nav { display: none; }
   .nav-toggle { display: block; }
   .header-phone { display: none; }
@@ -903,8 +927,8 @@ a { color: inherit; text-decoration: none; }
   .section { padding: 56px 0; }
   .hero__proof { gap: 20px; }
   .topbar__right { display: none; }
-  /* .btn is nowrap by default, so long labels ("Get My Free Boynton Beach Quote",
-     "Air Duct Cleaning in West Palm Beach") rendered wider than a phone viewport and
+  /* .btn is nowrap by default, so long labels ("Schedule Dryer Vent Cleaning",
+     "Dryer Transition Hose Replacement") rendered wider than a phone viewport and
      pushed the page into horizontal scroll. Let them wrap on small screens. */
   .btn { white-space: normal; }
   .brand__logo { height: 42px; }

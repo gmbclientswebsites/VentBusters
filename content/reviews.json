@@ -1,13 +1,49 @@
 {
-  "_readme": "Real customer reviews only, copied verbatim from the Google Business Profile. Renders on /reviews.html and the homepage. Leave the array empty and both sections fall back to copy that makes no rating claim. Do not add anything that is not a genuine published review.",
+  "_readme": "Real customer reviews only, copied verbatim from the Vent Busters Google Business Profile. Renders on /reviews.html and the homepage. Leave the array empty and both sections fall back to copy that makes no rating claim. Do not add anything that is not a genuine published review.",
   "_fields": {
-    "author": "reviewer name as published",
+    "author": "reviewer name exactly as published on Google",
     "rating": "integer 1-5 as published",
-    "city": "optional",
-    "date": "YYYY-MM",
-    "text": "review text, verbatim",
-    "source": "Google"
+    "text": "review text, verbatim, not edited or shortened",
+    "source": "where it is published",
+    "note": "optional reviewer context Google shows, e.g. Local Guide",
+    "dateApprox": "approximate month. Google's public listing shows only relative dates ('2 months ago'), so these are inferred, not exact. Deliberately NOT rendered on the page and NOT emitted as datePublished - the link to Google carries the real dates."
   },
-  "profileUrl": "",
-  "reviews": []
+  "_provenance": {
+    "capturedFrom": "https://www.google.com/maps?cid=2546061381231444699",
+    "capturedOn": "2026-11-01",
+    "listingName": "Vent Busters",
+    "listingCategory": "Dryer vent cleaning service",
+    "listingRating": "5.0",
+    "listingReviewCount": 3,
+    "cidHex": "0x40a3868564bc569f:0x23556d562ca402db"
+  },
+  "_schemaPolicy": "No Review or AggregateRating structured data is emitted anywhere on this site. Google does not support review rich results for reviews about a business that are hosted on that business's own website (self-serving reviews), and marking them up risks a structured data manual action for no benefit. The reviews are displayed as ordinary visible content and linked to the source instead.",
+  "profileUrl": "https://www.google.com/maps?cid=2546061381231444699",
+  "writeReviewUrl": "https://www.google.com/maps?cid=2546061381231444699",
+  "reviews": [
+    {
+      "author": "Liron Turgeman",
+      "rating": 5,
+      "source": "Google",
+      "note": "Local Guide",
+      "dateApprox": "2026-09",
+      "text": "My dryer was taking 2 cycles for every load and I thought I was going to need a new dryer. Vent Busters checked everything first and found that the dryer was fine, the vent was just badly clogged. After the cleaning, my clothes dried in 1 cycle again. Such a big difference! Super happy with the service and definitely recommend them."
+    },
+    {
+      "author": "Nico's Adventures",
+      "rating": 5,
+      "source": "Google",
+      "note": "",
+      "dateApprox": "2026-10",
+      "text": "Highly recommend Jacob. We had another company scheduled to clean our dryer vent, who had to cancel, and Jacob fit us into his schedule same day. He was professional, efficient and fairly priced. We will definitely use him again!"
+    },
+    {
+      "author": "Denise Lapp",
+      "rating": 5,
+      "source": "Google",
+      "note": "",
+      "dateApprox": "2026-10",
+      "text": "Jacob was amazing clean my dryer fast and professional"
+    }
+  ]
 }
