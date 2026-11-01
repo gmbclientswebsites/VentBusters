@@ -1,0 +1,13 @@
+{
+  "_readme": "Real customer reviews only, copied verbatim from the Google Business Profile. Renders on /reviews.html and the homepage. Leave the array empty and both sections fall back to copy that makes no rating claim. Do not add anything that is not a genuine published review.",
+  "_fields": {
+    "author": "reviewer name as published",
+    "rating": "integer 1-5 as published",
+    "city": "optional",
+    "date": "YYYY-MM",
+    "text": "review text, verbatim",
+    "source": "Google"
+  },
+  "profileUrl": "",
+  "reviews": []
+}

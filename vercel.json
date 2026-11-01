@@ -3,38 +3,178 @@
   "outputDirectory": ".",
   "redirects": [
     {
-      "source": "/blog/vent-busters-expanding-nationwide.html",
-      "destination": "/blog/south-florida-home-fire-safety-checklist.html",
+      "source": "/locations/boca-raton-fl.html",
+      "destination": "/dryer-vent-cleaning-boca-raton-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/boynton-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-boynton-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/delray-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-delray-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/greenacres-fl.html",
+      "destination": "/dryer-vent-cleaning-greenacres-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/highland-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-highland-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/hobe-sound-fl.html",
+      "destination": "/dryer-vent-cleaning-hobe-sound-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/juno-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-juno-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/jupiter-fl.html",
+      "destination": "/dryer-vent-cleaning-jupiter-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lake-worth-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-lake-worth-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lantana-fl.html",
+      "destination": "/dryer-vent-cleaning-lantana-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/north-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-north-palm-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/palm-beach-gardens-fl.html",
+      "destination": "/dryer-vent-cleaning-palm-beach-gardens-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/palm-city-fl.html",
+      "destination": "/dryer-vent-cleaning-palm-city-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/port-st-lucie-fl.html",
+      "destination": "/dryer-vent-cleaning-port-st-lucie-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/riviera-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-riviera-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/royal-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-royal-palm-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/stuart-fl.html",
+      "destination": "/dryer-vent-cleaning-stuart-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/tequesta-fl.html",
+      "destination": "/dryer-vent-cleaning-tequesta-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/wellington-fl.html",
+      "destination": "/dryer-vent-cleaning-wellington-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations/west-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-west-palm-beach-fl.html",
       "permanent": true
     },
     {
       "source": "/locations/air-duct-cleaning-boca-raton-fl.html",
-      "destination": "/locations/boca-raton-fl.html",
+      "destination": "/dryer-vent-cleaning-boca-raton-fl.html",
       "permanent": true
     },
     {
       "source": "/locations/air-duct-cleaning-west-palm-beach-fl.html",
-      "destination": "/locations/west-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-west-palm-beach-fl.html",
       "permanent": true
     },
     {
       "source": "/locations/dryer-vent-cleaning-boca-raton-fl.html",
-      "destination": "/locations/boca-raton-fl.html",
+      "destination": "/dryer-vent-cleaning-boca-raton-fl.html",
       "permanent": true
     },
     {
       "source": "/locations/dryer-vent-cleaning-west-palm-beach-fl.html",
-      "destination": "/locations/west-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-west-palm-beach-fl.html",
       "permanent": true
     },
     {
       "source": "/locations/lake-park-fl.html",
-      "destination": "/locations/north-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-north-palm-beach-fl.html",
       "permanent": true
     },
     {
       "source": "/locations/palm-beach-fl.html",
-      "destination": "/locations/west-palm-beach-fl.html",
+      "destination": "/dryer-vent-cleaning-west-palm-beach-fl.html",
+      "permanent": true
+    },
+    {
+      "source": "/air-duct-cleaning.html",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/uv-light-installation.html",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-system-sanitization.html",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/fire-safety-inspections.html",
+      "destination": "/dryer-vent-airflow-testing.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-often-clean-air-ducts.html",
+      "destination": "/blog/how-often-clean-dryer-vent-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-affects-duct-cleaning-cost.html",
+      "destination": "/blog/dryer-vent-cleaning-cost-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-duct-cleaning-a-scam.html",
+      "destination": "/blog/is-dryer-vent-cleaning-a-scam.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/florida-humidity-duct-cleaning.html",
+      "destination": "/blog/why-is-my-laundry-room-so-hot.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vent-busters-expanding-nationwide.html",
+      "destination": "/blog/south-florida-home-fire-safety-checklist.html",
       "permanent": true
     }
   ]

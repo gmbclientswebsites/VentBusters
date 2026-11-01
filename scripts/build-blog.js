@@ -8,7 +8,25 @@ const contentDir = path.join(root, 'content', 'blog');
 const blogDir = path.join(root, 'blog');
 const indexPath = path.join(root, 'blog.html');
 const sitemapPath = path.join(root, 'sitemap.xml');
-const templatePath = path.join(blogDir, 'florida-humidity-duct-cleaning.html');
+// Shell donated by a hand-written post. Listed in preference order and
+// resolved at run time, so renaming one post cannot silently drop the build
+// back to the bare fallback skeleton (no nav, no stylesheet).
+const TEMPLATE_CANDIDATES = [
+  'warning-signs-dryer-vent-needs-cleaning.html',
+  'how-often-clean-dryer-vent-florida.html',
+  'is-dryer-vent-cleaning-a-scam.html',
+  'south-florida-home-fire-safety-checklist.html'
+];
+
+function resolveTemplatePath() {
+  for (const name of TEMPLATE_CANDIDATES) {
+    const candidate = path.join(blogDir, name);
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  return null;
+}
+
+const templatePath = resolveTemplatePath();
 
 function readJsonPosts() {
   if (!fs.existsSync(contentDir)) return [];
@@ -190,6 +208,16 @@ function generatePage(post, template) {
     mainEntityOfPage: url
   }, null, 2);
 
+  const breadcrumbLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.vent-busters.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.vent-busters.com/blog.html' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url }
+    ]
+  }, null, 2);
+
   return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(post.metaTitle || post.title)} | Vent Busters</title>`)
     .replace(/<meta name="description" content="[\s\S]*?">/, `<meta name="description" content="${description}">`)
@@ -198,7 +226,10 @@ function generatePage(post, template) {
     .replace(/<meta property="og:description" content="[\s\S]*?">/, `<meta property="og:description" content="${description}">`)
     .replace(/<meta property="og:image" content="[\s\S]*?">/, `<meta property="og:image" content="https://www.vent-busters.com${image}">`)
     .replace(/<meta property="og:url" content="[\s\S]*?">/, `<meta property="og:url" content="${url}">`)
-    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">\n${jsonLd}\n</script>`)
+    // Replace the whole run of ld+json blocks, not just the first: the shell
+    // also carries a BreadcrumbList, and leaving it behind made every generated
+    // post claim the template post's breadcrumb trail.
+    .replace(/(?:<script type="application\/ld\+json">[\s\S]*?<\/script>\s*)+/, `<script type="application/ld+json">\n${jsonLd}\n</script>\n<script type="application/ld+json">\n${breadcrumbLd}\n</script>\n`)
     .replace(/<main id="main">[\s\S]*?<\/main>/, `<main id="main">${articleMain(post)}\n</main>`);
 }
 
@@ -278,9 +309,11 @@ mirrorPublicImages();
 
 const posts = readJsonPosts();
 const handwrittenSlugs = existingSlugs();
-const template = fs.existsSync(templatePath)
-  ? fs.readFileSync(templatePath, 'utf8')
-  : '<!DOCTYPE html><html><head></head><body><main id="main"></main></body></html>';
+if (!templatePath) {
+  console.error('build-blog: no template post found in /blog. Expected one of: ' + TEMPLATE_CANDIDATES.join(', '));
+  process.exit(1);
+}
+const template = fs.readFileSync(templatePath, 'utf8');
 
 for (const post of posts) {
   if (handwrittenSlugs.has(post.slug)) continue;

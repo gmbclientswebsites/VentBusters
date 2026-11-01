@@ -1,0 +1,15 @@
+{
+  "_readme": "Real completed dryer vent jobs. Each entry renders a project card on /projects.html and the three most recent on the homepage. Photos go in /images/projects/ . Leave the array empty and both sections fall back to generic copy instead of showing placeholders.",
+  "_fields": {
+    "slug": "url-safe id, used for the anchor link",
+    "title": "e.g. Severe Dryer Vent Blockage",
+    "city": "e.g. Boynton Beach",
+    "issue": "short label, e.g. Severe lint blockage",
+    "found": "what was found on arrival",
+    "work": "what was performed",
+    "result": "outcome; include the airflow figures only if they were actually measured",
+    "date": "YYYY-MM",
+    "photos": [{ "src": "/images/projects/example-1.webp", "w": 1200, "h": 900, "alt": "descriptive alt text" }]
+  },
+  "projects": []
+}
