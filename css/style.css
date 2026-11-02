@@ -219,15 +219,20 @@ a { color: inherit; text-decoration: none; }
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
+/* nowrap is load-bearing, not cosmetic. Without it a header that is a few
+   pixels short does not overflow (which an audit would catch) — flexbox
+   shrinks the nav and the labels wrap mid-phrase instead, which looks broken
+   and passes an overflow check. Keep it. */
 .main-nav a {
   font-weight: 600;
   font-size: 0.95rem;
   padding: 6px 2px;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 .main-nav a:hover { border-color: var(--red); }
 
@@ -270,14 +275,6 @@ a { color: inherit; text-decoration: none; }
 .footer-allareas:hover { text-decoration: underline; }
 
 .header-actions { display: flex; align-items: center; gap: 18px; }
-.header-phone {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-  text-align: right;
-}
-.header-phone small { color: var(--gray-500); font-size: 0.75rem; }
-.header-phone strong { font-size: 1.05rem; color: var(--navy); }
 
 .nav-toggle {
   display: none;
@@ -897,15 +894,14 @@ a { color: inherit; text-decoration: none; }
   .footer-areas { columns: 2; }
 }
 
-/* Nav labels carry the keyword ("Dryer Vent Cleaning") and the bar now also
-   holds Reviews, so the desktop header is wide. Collapse at 1010px: measured
-   in the widest realistic fallback font (Arial, on machines without Segoe
-   UI), 941px overflows by 41px and even 980px is 2px short. 1010px leaves
-   28px of slack in that worst case. Re-measure if a nav item is added. */
-@media (max-width: 1010px) {
+/* Collapse point measured, not guessed: with the duplicate phone block gone
+   the desktop header fits from 960px in Segoe UI but needs 1040px in the
+   widest realistic fallback (Arial, on machines without Segoe UI). Collapsing
+   at 1060px keeps a 20px margin over that worst case.
+   Re-measure if a nav item is added or a label gets longer. */
+@media (max-width: 1060px) {
   .main-nav { display: none; }
   .nav-toggle { display: block; }
-  .header-phone { display: none; }
   .header-actions .btn--red { display: none; }
   .site-header .container { flex-wrap: nowrap; }
 }
