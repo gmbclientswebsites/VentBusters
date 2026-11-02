@@ -894,11 +894,13 @@ a { color: inherit; text-decoration: none; }
   .footer-areas { columns: 2; }
 }
 
-/* Collapse point measured, not guessed: with the duplicate phone block gone
-   the desktop header fits from 960px in Segoe UI but needs 1040px in the
-   widest realistic fallback (Arial, on machines without Segoe UI). Collapsing
-   at 1060px keeps a 20px margin over that worst case.
-   Re-measure if a nav item is added or a label gets longer. */
+/* Collapse point, measured on the REAL rendering (an earlier figure here was
+   wrong because the probe forced .main-nav visible, which does not reproduce
+   the actual layout). Today’s six-item nav needs 920px in Segoe UI and 970px
+   in the widest realistic fallback (Arial). Projects joins the nav
+   automatically once content/projects.json has entries, costing ~75px more,
+   so 1060px covers both the current and the future nav.
+   Re-measure without forcing display if a nav item or label changes. */
 @media (max-width: 1060px) {
   .main-nav { display: none; }
   .nav-toggle { display: block; }

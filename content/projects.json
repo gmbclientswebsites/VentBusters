@@ -1,15 +1,38 @@
 {
-  "_readme": "Real completed dryer vent jobs. Each entry renders a project card on /projects.html and the three most recent on the homepage. Photos go in /images/projects/ . Leave the array empty and both sections fall back to generic copy instead of showing placeholders.",
-  "_fields": {
-    "slug": "url-safe id, used for the anchor link",
-    "title": "e.g. Severe Dryer Vent Blockage",
-    "city": "e.g. Boynton Beach",
-    "issue": "short label, e.g. Severe lint blockage",
-    "found": "what was found on arrival",
-    "work": "what was performed",
-    "result": "outcome; include the airflow figures only if they were actually measured",
-    "date": "YYYY-MM",
-    "photos": [{ "src": "/images/projects/example-1.webp", "w": 1200, "h": 900, "alt": "descriptive alt text" }]
+  "_readme": "Real completed dryer vent jobs. Run `node scripts/build-content.js` (it also runs on every deploy) and this file becomes projects.html, the individual /projects/<slug>.html pages, and the homepage preview. Add a job here and push - no page editing.",
+
+  "_howToAddAJob": [
+    "1. Put the photos in images/projects/ . Name them descriptively, e.g. roof-dryer-vent-cleaning-boynton-beach-fl-1.webp",
+    "2. Copy the _example object below into the projects array and fill it in.",
+    "3. Push. The build regenerates every page that shows projects.",
+    "Only write what actually happened. Leave result/airflow out rather than estimating them, and do not name a city in alt text unless the photo was taken there."
+  ],
+
+  "_rules": {
+    "ownPage": "A job gets its own indexable page at /projects/<slug>.html only when it has at least 3 photos AND at least 90 words across problem/found/work/result. Thinner jobs still appear as cards on the index. This keeps thin pages out of the index.",
+    "emptyState": "While this array is empty, projects.html is noindex, stays out of the sitemap, and Projects is not shown in the navigation.",
+    "airflow": "Only fill airflowBefore/airflowAfter if the readings were actually measured on that job."
   },
+
+  "_example": {
+    "slug": "dryer-vent-blockage-boynton-beach-fl",
+    "title": "Severe Dryer Vent Blockage",
+    "city": "Boynton Beach",
+    "citySlug": "boynton-beach",
+    "serviceType": "Dryer Vent Blockage Removal",
+    "servicePage": "/dryer-vent-blockage-removal.html",
+    "date": "2026-10",
+    "problem": "Homeowner reported long drying times and excessive heat from the dryer.",
+    "found": "What was actually in the duct when it was opened up.",
+    "work": "What was performed, including anything that could not be reached and why.",
+    "result": "What changed. Leave this out if there is nothing measured or observed to report.",
+    "airflowBefore": "optional, only if measured",
+    "airflowAfter": "optional, only if measured",
+    "photos": [
+      { "src": "/images/projects/example-1.webp", "w": 1200, "h": 900, "alt": "Lint packed inside an exterior dryer vent hood before cleaning" },
+      { "src": "/images/projects/example-2.webp", "w": 1200, "h": 900, "alt": "The same dryer vent hood cleared, with the flap swinging freely" }
+    ]
+  },
+
   "projects": []
 }

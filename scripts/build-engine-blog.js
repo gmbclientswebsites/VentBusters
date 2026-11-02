@@ -49,14 +49,25 @@ function readPosts() {
     .filter(Boolean);
 }
 
+/* A slug backed by a content JSON is owned by that JSON, not hand-written, so
+ * it must NOT count as occupied. Without this the first build freezes the post
+ * and every later edit to the JSON silently does nothing. Posts with no JSON
+ * are genuinely hand-written and are still skipped. */
 function existingSlugs() {
   const dir = path.join(root, 'blog');
   if (!fs.existsSync(dir)) return new Set();
+
+  const jsonBacked = new Set(
+    (fs.existsSync(contentDir) ? fs.readdirSync(contentDir) : [])
+      .filter(name => name.endsWith('.json'))
+      .map(name => name.slice(0, -5))
+  );
 
   return new Set(
     fs.readdirSync(dir)
       .filter(name => name.endsWith('.html'))
       .map(name => name.slice(0, -5))
+      .filter(slug => !jsonBacked.has(slug))
   );
 }
 
@@ -122,9 +133,9 @@ function makePage(template, post) {
   </section>
   <section class="section section--tight cta-banner">
     <div class="container">
-      <h2>Ready to Bust the Lint in Your Home?</h2>
-      <p>Book a free vent evaluation and let's fix the problem, not just read about it.</p>
-      <a href="/contact.html" class="btn btn--navy btn--lg">Get My Free Quote</a>
+      <h2>Ready to Clear Your Dryer Vent?</h2>
+      <p>Book a dryer vent cleaning and we will measure the airflow before and after, so you can see what changed.</p>
+      <a href="/contact.html" class="btn btn--navy btn--lg">Schedule Dryer Vent Service</a>
       <p style="margin-top:14px;font-size:0.85rem;color:rgba(255,255,255,0.85);">🔥 Free, fast, and no obligation.</p>
     </div>
   </section>
@@ -174,15 +185,39 @@ function card(post) {
 </article>`;
 }
 
+/* This appended cards before the marker with no de-duplication, so every build
+ * stacked another copy of each post onto blog.html. It was masked while posts
+ * were always skipped. build-blog.js runs first and owns the listing through
+ * its BEGIN/END ENGINE BLOG POSTS block, so when that block is present this is
+ * a no-op rather than a second writer fighting over the same file. */
 function updateIndex(posts) {
   if (!fs.existsSync(blogIndex) || !posts.length) return;
-  let html = fs.readFileSync(blogIndex, 'utf8');
-  const additions = posts.map(card).join('\n');
+  const rawIndex = fs.readFileSync(blogIndex, 'utf8');
+  if (rawIndex.indexOf('<!-- BEGIN ENGINE BLOG POSTS -->') !== -1) return;
+
+  const indexIsCrlf = rawIndex.indexOf('\r\n') !== -1;
+  let html = indexIsCrlf ? rawIndex.split('\r\n').join('\n') : rawIndex;
   const marker = '<!-- END CMS-REPLACEABLE POST LOOP -->';
-  if (html.includes(marker)) {
-    html = html.replace(marker, `${additions}\n      ${marker}`);
-    fs.writeFileSync(blogIndex, html);
+  if (html.indexOf(marker) === -1) return;
+
+  for (const post of posts) {
+    const cardRe = new RegExp(
+      '\\s*<article class="blog-card">\\n(?:(?!</article>)[\\s\\S])*?/blog/' +
+      post.slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\.html(?:(?!</article>)[\\s\\S])*?</article>',
+      'g'
+    );
+    html = html.replace(cardRe, (hit) => {
+      if (/<main|<h1|<\/head>|<footer/.test(hit)) {
+        console.error('build: refusing to remove a blog-card match that spans page structure (slug ' + post.slug + ')');
+        return hit;
+      }
+      return '';
+    });
   }
+
+  const additions = posts.map(card).join('\n');
+  html = html.replace(marker, additions + '\n      ' + marker);
+  fs.writeFileSync(blogIndex, indexIsCrlf ? html.split('\n').join('\r\n') : html);
 }
 
 function updateSitemap(posts) {

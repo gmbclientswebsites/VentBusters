@@ -37,13 +37,24 @@ function readPosts() {
     .filter(Boolean);
 }
 
+/* A slug backed by a content JSON is owned by that JSON, not hand-written, so
+ * it must NOT count as occupied. Without this the first build freezes the post
+ * and every later edit to the JSON silently does nothing. Posts with no JSON
+ * are genuinely hand-written and are still skipped. */
 function existingSlugs() {
   if (!fs.existsSync(BLOG_DIR)) return new Set();
+
+  const jsonBacked = new Set(
+    (fs.existsSync(CONTENT_DIR) ? fs.readdirSync(CONTENT_DIR) : [])
+      .filter((name) => name.endsWith('.json'))
+      .map((name) => name.slice(0, -5))
+  );
 
   return new Set(
     fs.readdirSync(BLOG_DIR)
       .filter((name) => name.endsWith('.html'))
       .map((name) => path.basename(name, '.html'))
+      .filter((slug) => !jsonBacked.has(slug))
   );
 }
 
@@ -142,9 +153,9 @@ function articleMarkup(post) {
 
   <section class="section section--tight cta-banner">
     <div class="container">
-      <h2>Ready to Bust the Lint in Your Home?</h2>
-      <p>Book a free vent evaluation and let's fix the problem, not just read about it.</p>
-      <a href="/contact.html" class="btn btn--navy btn--lg">Get My Free Quote</a>
+      <h2>Ready to Clear Your Dryer Vent?</h2>
+      <p>Book a dryer vent cleaning and we will measure the airflow before and after, so you can see what changed.</p>
+      <a href="/contact.html" class="btn btn--navy btn--lg">Schedule Dryer Vent Service</a>
       <p style="margin-top:14px;font-size:0.85rem;color:rgba(255,255,255,0.85);">🔥 Free, fast, and no obligation.</p>
     </div>
   </section>`.trim();
@@ -241,27 +252,58 @@ function blogCard(post) {
         </article>`;
 }
 
+/* blog.html is CRLF. The old version built its markers with a bare "\n", so
+ * `${GENERATED_START}\n` never matched `GENERATED_START\r\n`; indexOf returned
+ * -1, start became 31, end stayed -1, and
+ *   html.slice(0, 31) + generated + html.slice(-1)
+ * truncated the entire blog index to a few bytes. It only ever ran when a post
+ * was actually generated, so it sat dormant until the next publish.
+ * Now: match against LF-normalised text, restore the original endings, and
+ * never slice with an index that could be -1. */
 function updateIndex(posts) {
   if (!fs.existsSync(BLOG_INDEX) || !posts.length) return;
 
-  let html = fs.readFileSync(BLOG_INDEX, 'utf8');
-  const startMarker = `${GENERATED_START}\n`;
-  const endMarker = `\n${GENERATED_END}`;
+  const rawIndex = fs.readFileSync(BLOG_INDEX, 'utf8');
+  const indexIsCrlf = rawIndex.indexOf('\r\n') !== -1;
+  let html = indexIsCrlf ? rawIndex.split('\r\n').join('\n') : rawIndex;
 
   const generated = posts.map(blogCard).join('\n');
 
-  if (html.includes(GENERATED_START) && html.includes(GENERATED_END)) {
-    const start = html.indexOf(startMarker) + startMarker.length;
-    const end = html.indexOf(endMarker, start);
-    html = `${html.slice(0, start)}${generated}${html.slice(end)}`;
-  } else {
-    const loopEnd = html.indexOf('      <!-- END CMS-REPLACEABLE POST LOOP -->');
-    if (loopEnd === -1) return;
-
-    html = `${html.slice(0, loopEnd)}      ${GENERATED_START}\n${generated}\n      ${GENERATED_END}\n${html.slice(loopEnd)}`;
+  /* A slug can already have a hand-written card elsewhere in the index (the
+   * first build of a post commits one). Without this it would then appear
+   * twice: once in the hand-written list and once in the generated block. */
+  for (const post of posts) {
+    const cardRe = new RegExp(
+      '\\s*<article class="blog-card">\\n(?:(?!</article>)[\\s\\S])*?/blog/' +
+      post.slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') +
+      '\\.html(?:(?!</article>)[\\s\\S])*?</article>',
+      'g'
+    );
+    html = html.replace(cardRe, (hit) => {
+      if (/<main|<h1|<\/head>|<footer/.test(hit)) {
+        console.error('build: refusing to remove a blog-card match that spans page structure (slug ' + post.slug + ')');
+        return hit;
+      }
+      return '';
+    });
   }
 
-  fs.writeFileSync(BLOG_INDEX, html);
+  const start = html.indexOf(GENERATED_START);
+  const end = start === -1 ? -1 : html.indexOf(GENERATED_END, start);
+
+  if (start !== -1 && end !== -1) {
+    html = html.slice(0, start + GENERATED_START.length) + '\n' + generated + '\n      ' + html.slice(end);
+  } else if (start === -1 && end === -1) {
+    const loopEnd = html.indexOf('      <!-- END CMS-REPLACEABLE POST LOOP -->');
+    if (loopEnd === -1) return;
+    html = html.slice(0, loopEnd) + '      ' + GENERATED_START + '\n' + generated +
+           '\n      ' + GENERATED_END + '\n' + html.slice(loopEnd);
+  } else {
+    console.error('build-blog: blog.html has only one generated-block marker; refusing to edit it.');
+    return;
+  }
+
+  fs.writeFileSync(BLOG_INDEX, indexIsCrlf ? html.split('\n').join('\r\n') : html);
 }
 
 function updateSitemap(posts) {

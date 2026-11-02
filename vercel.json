@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node scripts/build-blog.js && node scripts/build-engine-blog.js && node scripts/build-llms.js",
+  "buildCommand": "node scripts/build-blog.js && node scripts/build-engine-blog.js && node scripts/build-content.js && node scripts/build-llms.js && node scripts/build-sitemap.js",
   "outputDirectory": ".",
   "redirects": [
     {
